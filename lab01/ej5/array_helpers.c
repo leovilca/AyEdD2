@@ -1,8 +1,8 @@
 /* First, the standard lib includes, alphabetically ordered */
 #include <assert.h>
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "mybool.h"
 #include "array_helpers.h"
 
 unsigned int array_from_file(int array[], unsigned int max_size, const char *filepath) {
@@ -37,9 +37,9 @@ void array_dump(int a[], unsigned int length) {
 
 }
 
-bool array_is_sorted(int a[], unsigned int length){
+mybool array_is_sorted(int a[], unsigned int length){
 
-    bool res = true;
+    mybool res = true;
 
     for(unsigned int i=0;i<length-1;i++){
         if(a[i]>a[i+1]){
