@@ -4,7 +4,8 @@
 
 #include <assert.h>  /* assert() */
 
-int CELL_MAX,N;
+#define N 5
+#define CELL_MAX (N * N)-1
 
 void print_sep(int length) {
     printf("\t ");
@@ -106,12 +107,6 @@ bool has_free_cell(char board[N][N])
 int main(void)
 {
     printf("TicTacToe [InCoMpLeTo :'(]\n");
-    
-    //set board size
-
-    printf("Ingrese un numero para el tamaño del tablero:  ");
-    scanf("%d",&N);
-    CELL_MAX = (N*N)-1;
 
     //init
 
