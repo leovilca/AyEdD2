@@ -14,10 +14,16 @@ static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
        (no se puede leer, pero en sort_helpers.h vas a encontrar información
         para saber cómo usarlo)
     */
+   printf("entrando pa anashe con IZQ: %d  y DER: %d .\n",izq,der);
     if(der>izq){
-        int ppiv = partition(a,izq,der);
-        quick_sort_rec(a,izq,ppiv-1);
-        quick_sort_rec(a,ppiv+1,der);
+        unsigned int ppiv = partition(a,izq,der);
+        printf("   con PPIV: %d  .\n",ppiv);
+        if(ppiv>izq){
+            quick_sort_rec(a,izq,ppiv-1);
+        }
+        if(ppiv<der){
+            quick_sort_rec(a,ppiv+1,der);
+        }
     }
 }
 
