@@ -54,8 +54,9 @@ int main(int argc, char *argv[]) {
     /* parse the file to fill the array and obtain the actual length */
     unsigned int length = array_from_file(array, MAX_SIZE, filepath);
 
-    /* create a copy of the array */
     int copy[MAX_SIZE];
+
+    /* create a copy of the array */
     array_copy(copy, array, length);
 
     /* reset counters and set time */
@@ -78,6 +79,21 @@ int main(int argc, char *argv[]) {
     */
     /* needs implementation */
 
+    /* create a copy of the array */
+    array_copy(copy, array, length);
+
+    /* reset counters and set time */
+    reset_comparisons_counter();
+    reset_swaps_counter();
+    set_current_time();
+
+    /* do the actual sorting */
+    insertion_sort(copy, length);
+
+    /* show statistics for selection_sort */
+    printf("statistics for insertion_sort\n");
+    printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
+
 
     /* all the same for quick_sort */
     /* Usando la idea de las líneas de códigos anteriores
@@ -87,6 +103,20 @@ int main(int argc, char *argv[]) {
     */
     /* needs implementation */
 
+    /* create a copy of the array */
+    array_copy(copy, array, length);
+
+    /* reset counters and set time */
+    reset_comparisons_counter();
+    reset_swaps_counter();
+    set_current_time();
+
+    /* do the actual sorting */
+    quick_sort(copy, length);
+
+    /* show statistics for selection_sort */
+    printf("statistics for quick_sort\n");
+    printf("time elapsed=%g,    comparisons: %10u,    swaps: %10u\n", calculate_elapsed_time(), comparisons_number(), swaps_number());
 
 
     return EXIT_SUCCESS;
