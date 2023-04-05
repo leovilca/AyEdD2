@@ -7,20 +7,6 @@
 #include "sort_helpers.h"
 #include "sort.h"
 
-static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
- /* needs implementation */
-
-    if(der>izq){
-        unsigned int ppiv = partition(a,izq,der);
-        if(ppiv>izq){
-            quick_sort_rec(a,izq,ppiv-1);
-        }
-        if(ppiv<der){
-            quick_sort_rec(a,ppiv+1,der);
-        }
-    }
-}
-
 static unsigned int partition(int a[], unsigned int izq, unsigned int der) {
     /* Needs implementation */
 
@@ -41,14 +27,22 @@ static unsigned int partition(int a[], unsigned int izq, unsigned int der) {
             swap(a,i,j);
         }
     }
-    swap(a,ppiv,i);
-    ppiv=i;
+    swap(a,ppiv,j);
+    ppiv=j;
     return ppiv;
 }
 
 static void quick_sort_rec(int a[], unsigned int izq, unsigned int der) {
     /* copiá acá la implementación que hiciste en el ejercicio 3 */
-
+    if(der>izq){
+        unsigned int ppiv = partition(a,izq,der);
+        if(ppiv>izq){
+            quick_sort_rec(a,izq,ppiv-1u);
+        }
+        if(ppiv<der){
+            quick_sort_rec(a,ppiv+1u,der);
+        }
+    }
 }
 
 void quick_sort(int a[], unsigned int length) {
