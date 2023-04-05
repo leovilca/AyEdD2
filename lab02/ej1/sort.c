@@ -9,18 +9,24 @@
 
 static void insert(int a[], unsigned int i) {
     /* needs implementation */
-    if(i>1){
-        unsigned int j=i-1;
-        while(j>0u && goes_before(a[i],a[j])){
+    unsigned int j=i;
+    bool band=true;
+    while(band){
+        bool res = goes_before(a[j],a[j-1]);
+        if(res){
+            swap(a,j,j-1);
+        }
+        if(!res || j==1){
+            band=false;
+        }else{
             j--;
         }
-        swap(a,i,j);
     }
 }
 
 void insertion_sort(int a[], unsigned int length) {
     for (unsigned int i = 1u; i < length; ++i) {
-        assert(array_is_sorted(a,i-1));
+        assert(array_is_sorted(a,i));
         insert(a, i);
     }
 }
