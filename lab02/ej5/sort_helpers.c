@@ -12,6 +12,7 @@ void swap(fixstring a[], unsigned int i, unsigned int j) {
      * COMPLETAR
      *
      */
+    fstring_swap(a[i],a[j]);
 }
 
 bool goes_before(fixstring x, fixstring y) {
@@ -19,7 +20,20 @@ bool goes_before(fixstring x, fixstring y) {
      * COMPLETAR
      *
      */
-    return false;
+    bool res;
+    /*
+        ORDEN ALFABETICO
+    */
+
+        res=fstring_less_eq(x,y);
+
+    /*
+        ORDEN DE TAMANIO
+    */
+
+        //res=fstring_length(x)<=fstring_length(y);
+
+    return res;
 }
 
 bool array_is_sorted(fixstring array[], unsigned int length) {
