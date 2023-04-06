@@ -19,9 +19,9 @@ static unsigned int partition(int a[], unsigned int izq, unsigned int der) {
     unsigned int ppiv = izq;
     int i=izq+1,j=der;
     while(i<=j){
-        if(a[i]<=a[ppiv]){
+        if(goes_before(a[i],a[ppiv])){
             i++;
-        }else if(a[j]>=a[ppiv]){
+        }else if(goes_before(a[ppiv],a[j])){
             j--;
         }else{
             swap(a,i,j);
