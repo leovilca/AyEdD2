@@ -14,7 +14,7 @@ static unsigned int partition(fixstring a[], unsigned int izq, unsigned int der)
     while(i<=j){
         if(goes_before(a[i],a[ppiv])){
             i++;
-        }else if(!goes_before(a[j],a[ppiv]) || fstring_eq(a[j],a[ppiv])){
+        }else if(goes_before(a[ppiv],a[j])){
             j--;
         }else{
             fstring_swap(a[i],a[j]);
