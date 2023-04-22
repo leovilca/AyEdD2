@@ -59,6 +59,7 @@ char *parse_filepath(int argc, char *argv[]) {
  * @return EXIT_SUCCESS when programs executes correctly, EXIT_FAILURE otherwise
  */
 int main(int argc, char *argv[]) {
+
     char *filepath = NULL;
 
     /* parse the filepath given in command line arguments */

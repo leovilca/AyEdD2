@@ -3,14 +3,21 @@
 
 void absolute(int x, int y) {
     //
-    // Completar aquí
+    if(x<0){
+        y = x*(-1);
+    }
+    else{
+        y = x;
+    }
     //
 }
 
 int main(void) {
     int a=0, res=0;
     //
-    // Completar aquí
+    a = -10;
+    absolute(a,res);
+    printf("%d\n",res);
     //
     return EXIT_SUCCESS;
 }
